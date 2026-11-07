@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+@page {
+    size: A5 portrait; /* 148mm x 210mm */
+    margin: 18mm 14mm 20mm 14mm;
+    @bottom-center {
+        content: counter(page);
+        font-size: 8.5pt;
+        color: #888;
+        font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Nanum Myeongjo", "Noto Serif KR", serif;
+    font-size: 9.6pt;
+    line-height: 1.76;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    word-break: keep-all;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+.cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 32mm;
+}
+
+.cover-tag {
+    display: inline-block;
+    font-size: 8.5pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4f46e5;
+    font-weight: 700;
+    margin-bottom: 8mm;
+    border: 1px solid #4f46e5;
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+
+.cover h1 {
+    font-size: 20pt;
+    line-height: 1.35;
+    color: #0f172a;
+    margin: 0 0 5mm 0;
+    font-weight: 800;
+}
+
+.cover-sub {
+    font-size: 10.5pt;
+    color: #475569;
+    margin-bottom: 22mm;
+    font-weight: 500;
+}
+
+.cover-meta {
+    font-size: 9pt;
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.chapter {
+    page-break-after: always;
+    padding-top: 4mm;
+}
+
+h2 {
+    font-size: 13.5pt;
+    color: #0f172a;
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 2.5mm;
+    margin-top: 0;
+    margin-bottom: 5mm;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 11pt;
+    color: #312e81;
+    margin-top: 6mm;
+    margin-bottom: 2.5mm;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 3.5mm 0;
+}
+
+blockquote {
+    margin: 4mm 0;
+    padding: 3.5mm 5mm;
+    background-color: #f5f3ff;
+    border-left: 3.5px solid #4f46e5;
+    font-size: 9.1pt;
+    color: #1e1b4b;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.65;
+}
+
+ul, ol {
+    margin: 0 0 4mm 0;
+    padding-left: 5mm;
+}
+
+li {
+    margin-bottom: 2mm;
+    font-size: 9.4pt;
+}
+
+.highlight-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 3.5px solid #4f46e5;
+    border-radius: 4px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+}
+
+.highlight-title {
+    font-weight: 700;
+    color: #4338ca;
+    margin-bottom: 2mm;
+    font-size: 9.6pt;
+}
+
+code {
+    background-color: #f1f5f9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 8.8pt;
+    color: #0f172a;
+    font-family: Menlo, Monaco, monospace;
+}
+
+pre {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 3.5mm 4mm;
+    border-radius: 5px;
+    font-size: 8.2pt;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin: 3.5mm 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+figure {
+    margin: 4mm 0;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+figcaption {
+    font-size: 8pt;
+    color: #64748b;
+    margin-top: 1.5mm;
+    font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+    <div class="cover-tag">{{TAG}}</div>
+    <h1>{{TITLE}}</h1>
+    <div class="cover-sub">{{SUBTITLE}}</div>
+    <div class="cover-meta">
+        <strong>저자:</strong> {{AUTHOR}}<br>
+        <strong>발행:</strong> {{DATE}} / Studio Cowcowwow 디지털 에디션
+    </div>
+</div>
+
+{{CONTENT_CHAPTERS}}
+
+</body>
+</html>
